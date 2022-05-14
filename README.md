@@ -33,12 +33,10 @@ To use widget as date/time picker, set appropriate format, e.g. 'L LT' (as in ex
 
 **With a model**
 
-```
-<?php
+```php
 use buibr\datepicker\DatePicker;
-?>
 
-<?= DatePicker::widget([
+print DatePicker::widget([
     'model' => $model,
     'attribute' => 'attrName',
     'language' => 'ru',
@@ -53,9 +51,11 @@ use buibr\datepicker\DatePicker;
     'clientEvents' => [
         'dp.show' => new \yii\web\JsExpression("function () { console.log('It works!'); }"),
     ],
-]);?>
+])
+```
 
-<?= $form->field($model, 'attrName')->widget(
+```php
+$form->field($model, 'attrName')->widget(
     DatePicker::className(), [
         'addon' => false,
         'size' => 'sm',
@@ -63,15 +63,15 @@ use buibr\datepicker\DatePicker;
             'format' => 'L LT',
             'stepping' => 30,
         ],
-]);?>
+])
 ```
+
 **Without a model**
 
-```
-<?php
+```php
 use buibr\datepicker\DatePicker;
-?>
-<?= DatePicker::widget([
+
+print DatePicker::widget([
     'name' => 'datepickerTest',
     'value' => '09/13/2015',
     'clientOptions' => [
@@ -82,5 +82,5 @@ use buibr\datepicker\DatePicker;
         ['label' => 'Tomorrow', 'url' => '#', 'value' => \Yii::$app->formatter->asDate('+1 day')],
         ['label' => 'Some value', 'url' => '#', 'value' => 'Special value'],
     ],
-]);?>
+])
 ```
