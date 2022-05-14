@@ -55,15 +55,17 @@ print DatePicker::widget([
 ```
 
 ```php
-$form->field($model, 'attrName')->widget(
-    DatePicker::className(), [
-        'addon' => false,
-        'size' => 'sm',
-        'clientOptions' => [
-            'format' => 'L LT',
-            'stepping' => 30,
-        ],
-])
+
+$config = [
+    'addon' => false,
+    'size' => 'sm',
+    'clientOptions' => [
+        'format' => 'L LT',
+        'stepping' => 30,
+    ],
+];
+
+$form->field($model, 'attrName')->widget(DatePicker::className(), $config);
 ```
 
 **Without a model**
