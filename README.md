@@ -11,19 +11,9 @@ Installation
 ------------
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-Either run
-
+```shell
+composer require buibr/yii2-datepicker-bs4
 ```
-php composer.phar require "buibr/yii2-datepicker-bs4" "*"
-```
-
-or add
-
-```json
-"buibr/yii2-datepicker-bs4": "*"
-```
-
-to the `require` section of your application's `composer.json` file.
 
 Usage
 -----
@@ -65,7 +55,7 @@ $config = [
     ],
 ];
 
-$form->field($model, 'attrName')->widget(DatePicker::className(), $config);
+print $form->field($model, 'attrName')->widget(DatePicker::className(), $config);
 ```
 
 **Without a model**
